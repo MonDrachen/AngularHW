@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="row justify-content-center" *ngIf="character$ | async as character">
+    <div class = "col-xs-12 col-sm-6 col-md-6 justify-content-center">
+        <div class = "card">
+            <div class = "image">
+                <img
+                    [src] = "character.image"
+                    [alt] = "character.name"
+                    class = "card-img-top"
+                />
+            </div>
+            <div class = "card-inner">
+                <div class="header">
+                    <h2 id="charname">{{character.name | nameformat}}</h2>
+                    <h4>Gender: {{character.gender}}</h4>
+                    <h4>Species: {{character.species}}</h4>
+                    <h4>Status: {{character.status}}</h4>
+                    <h4>Created: {{character.created | date}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a (click)="onGoBack()" class="btn btn-primary btn-lg"><span class="fa fa-arrow-left"></span>
+</a>
